@@ -31,7 +31,7 @@ function firstRecurringCharacter2(input) {
         }
     }
     return undefined;
-
 }
+//O(n)
 
 firstRecurringCharacter2([2,5,1,2,3,5,1,2,4])
