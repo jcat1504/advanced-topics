@@ -1,30 +1,19 @@
 //10--->5-->16
 
-// let myLinkedList = {
-//     head: {
-//         value: 10,
-//         next: {
-//             value: 5,
-//             next: {
-//                 value: 16,
-//                 next: null
-//             }
-//         }
-//     }
-// }
-
 class Node {
     constructor(value){
         this.value = value;
         this.next = null;
+        this.prev =  null;
     }
 }
 
-class LinkedList {
+class DoublyLinkedList {
     constructor(value) {
         this.head = {
             value: value,
-            next: null
+            next: null,
+            prev: null
         }
         this.tail = this.head;
         this.length = 1;
@@ -32,6 +21,7 @@ class LinkedList {
     append(value) {
         const newNode = new Node(value);
         //instantiate -- create and run this new node
+        newNode.prev = this.tail;
         this.tail.next = newNode; //which is the new node
         this.tail = newNode;
         this.length++;
@@ -40,10 +30,11 @@ class LinkedList {
     prepend(value) {
         const newNode = new Node(value);
         newNode.next = this.head;
+        this.head.prev = newNode;
         //making a new pointer
         this.head = newNode;
         this.length++;
-        return this
+        return this;
     }
     printList() {
         const array = [];
@@ -63,12 +54,15 @@ class LinkedList {
         }
         const newNode = {
             value: value,
-            next: null
+            next: null,
+            prev: null
         };
         const leader = this.traverseToIndex(index-1)
-        const holdingPointer = leader.next
+        const follower = leader.next
         leader.next = newNode;
-        newNode.next = holdingPointer;
+        newNode.prev = leader;
+        newNode.next = follower;
+        follower.prev = newNode
         this.length++;
         return this.printList()
     }
@@ -78,8 +72,25 @@ class LinkedList {
         leader.next = unwantedNode;
         this.length--;
         return this.printList();
-
     }
+    reverse() {
+        if (!this.head.next){
+        //if there is only a head node 
+        return this.head;
+        }
+        let first = this.head; //reference
+        this.tail = this.head;
+        let second = first.next; //second node
+        while(second) {
+            const temp = second.next; //ref to third temporary
+            second.next = first;
+            first = second;
+            second = temp;
+            }
+            this.head.next = null;
+            this.head = first;//88 to be head next to be null
+            return this.printList()
+        }
     traverseToIndex(index) {
         //pointing to leader, which is previous head
         let counter = 0;
@@ -92,10 +103,11 @@ class LinkedList {
     }
 };
 
-const myLinkedList = new LinkedList(10)
+const myLinkedList = new DoublyLinkedList(10)
 myLinkedList.append(5);
 myLinkedList.append(16);
 myLinkedList.prepend(1);
+myLinkedList.printList();
 myLinkedList.insert(2, 99);
 //insert() - when we want to insert a new node between two nodes,
 //we gotta figure out first node(we can call leader), second node,

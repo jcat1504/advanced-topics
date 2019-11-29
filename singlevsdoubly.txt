@@ -1,0 +1,17 @@
+Single VS Doubly Linked Lists
+
+Single
+------
+A bit faster
+Requires less memory 
+A little bit faster
+*Cannot be iterated back and forth 
+*If you lose ref to head node, list can be lost in memory forever 
+*Good for using less memory/fast insertion/fast deletion
+
+
+Doubly 
+-------
+Iterated back and forth
+*Requires more memory and storage 
+*Can search backwards 
