@@ -34,10 +34,14 @@ class Stack  {
         if (!this.top) {
             return null;
         }
-        const holdingPointer = this.top;
+        if (this.top === this.bottom){
+        //only one item on list
+            this.bottom = null;
+        }
+        // const holdingPointer = this.top;
         this.top = this.top.next; //pointing to next node once removed
         this.length--; //decrease length by one
-        return holdingPointer;
+        return this;
     }
 }
 
@@ -46,6 +50,8 @@ myStack.push('google');
 myStack.push('udemy');
 myStack.push('discord');
 myStack.pop();
+myStack.pop();
+
 //Queues 
 //Arrays O(n)
 //LinkedLists <-- Better! O(1) constant time
