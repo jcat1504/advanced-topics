@@ -10,6 +10,7 @@ function fibonacciIterative(n){
     return arr[n];
     //grabbing array and then what ever number user wants
 }
+//O(n)
 
 function fibonacciRecursive(n){
     if(n < 2){
@@ -18,6 +19,8 @@ function fibonacciRecursive(n){
     return fibonacciRecursive(n-1) + fibonacciRecursive(n-2)
     //just adding numbers 1 and 2 before our sequence
 }
+//exponential time cause tree grows if n increases
+//O(2^N)
  
 fibonacciIterative(3);
 fibonacciRecursive(3);
