@@ -1,0 +1,28 @@
+Lexical: related to the words or vocabulary of a language
+Where the words were written and their location 
+Think of it this way: each global execution context shows a new world of lexican environment
+
+for each function, it creates a lexical environment 
+In javascript, our lexical scope(available data + variables where the function was defined)
+determines our available variables. Not where the function is called, which is dynamic scope.
+
+Hoisting:the behavior of moving the variables or function declarations
+to the top of their respective environments during compilation phase 
+vaiables are partially hoisted--hoist the variable but not the right side
+^^Calling the variable before it is declared reads it as undefined
+function declarations are hoisted 
+Hoisting is making space in memory to allocate functions or var keywords
+to make sure that the Js engine is ready for execution 
+
+with variables, can only hoist var 
+
+//function expression 
+var sing2 = function(){
+    console.log('uhh la la')
+}
+//^^going to be run after it is defined because it is not hoisted 
+
+//function declaration 
+function sing() {
+    console.log('ohhh la la la')
+}
