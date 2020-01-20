@@ -13,7 +13,6 @@ vaiables are partially hoisted--hoist the variable but not the right side
 function declarations are hoisted 
 Hoisting is making space in memory to allocate functions or var keywords
 to make sure that the Js engine is ready for execution 
-
 with variables, can only hoist var 
 
 //function expression 
