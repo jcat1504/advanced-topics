@@ -90,3 +90,24 @@ merge(L1, L2);
 // lengths of the respective linked lists. This is the running time 
 // because to merge both linked lists into one, we need to iterate 
 // through each node in the list.
+
+//SOLUTION 2
+var mergeTwoLists = function(l1, l2) {
+    const head = new ListNode(0);
+    let current = head; // keep track of head
+    while(l1 != null && l2 != null){
+        while(l1 != null  && l1.val <= l2.val) {
+            current.next = l1;
+            l1 = l1.next;
+            current = current.next;
+        } 
+        while(l1 != null && l2 != null && l1.val > l2.val){
+            current.next = l2;
+            l2 = l2.next;
+            current = current.next;
+        }
+        
+    }
+    current.next =  l2 || l1;
+    return head.next;
+};
