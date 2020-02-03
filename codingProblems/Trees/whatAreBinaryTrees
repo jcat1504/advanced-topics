@@ -1,0 +1,10 @@
+A binary tree is made of nodes, where each node contains a "left" reference, a "right" reference and a data element.
+the topmost node in the tree is called the root
+
+
+every node(excluding root) in a tree is connected by a directed edge from exactly one other node.
+Node is called a parent 
+On the other hand, node can be connected to arbitrary number of nodes, called children
+Nodes with no children are LEAVES or EXTERNAL NODES
+Nodes which are not leaves are internal nodes
+Nodes with same parent are called SIBLINGS
