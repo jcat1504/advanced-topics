@@ -34,3 +34,4 @@ for (elem of setOne){
   for (var i = 0; i<list.length; i++ {
     console.log("Looping: index ", i, "item: "+ list[i]);
     }
+```
