@@ -1,0 +1,36 @@
+### WHAT ARE HASHSETS? ###
+* HashSets allow the creation for collections of unique values, sort of like an array but no repeated elements
+  * A special type of collecion-- "set of values" where each value may occur only once. All elements are UNIQUE
+
+```javascript 
+new Set ([iterable]);
+let arrayOne = [1,2,3,4,5]
+
+let setOne = new Set(arrayOne)
+for (elem of setOne){
+  console.log(elem) }//1,2,3,4,5
+ ```
+ 
+ ```javascript
+ let setTwo = [...new Set(arrayOne)]
+  console.log(setTwo) //1,2,3,4,5
+  // using spread operator to turn set into an array
+  ```
+  
+  ###MAIN METHODS###
+  **new Set(iterable): creates the set & if an iterable object is provided(usually an array), copies values from it into the set
+  **set.add(value): adds value to set
+  **set.delete(value): removes the value, returns true if value existed at the moment of call, otherwise false
+  **set.has(value): returns true if value exists
+  **set.clear(): removes everything from set
+  **set.size: provide count of elements
+  **forEach(): Allows us to access each element of array in order
+  
+  #SIMPLE ITERATION OVER SET#
+  
+  ```javascript
+  var list = ['panda', 'cat', 'dog', 7, 'wolf'];
+  
+  for (var i = 0; i<list.length; i++ {
+    console.log("Looping: index ", i, "item: "+ list[i]);
+    }
