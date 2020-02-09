@@ -1,3 +1,43 @@
+COMPILER VS INTERPRETER
+COMPILER: Transform code written in a high leevel programming language into machine code, at once, before program runs
+
+* Will run code faster because it will only loop once
+*Has optimization, even though it starts off slower
+
+INTERPRETER; converts each high level program statement one by one, into machine code, during program running
+    -Babel: JS compiler that takes modern JS code and returns browser compatible JS(old JS code)
+    -TypeScript: Superset of JS that compiles down to JS
+    
+ *Easy to get up and running
+ *Can get slow with repeated code
+ 
+ *V8 engines have JIT compilers, which is best of both worlds
+ 
+ *IS JAVASCRIPT AN INTERPRETATED LANGUAGE?*
+ Well--depends on the implementation! Most of its performances and optimization factor depends on the engine it is supported by
+ -First of all, JS engines(or any other language engines) which translate our code for computers to understand are based on
+ interpreter or compilers
+ -Since we also have compliers in the engine to optimize code, it is not really an interpreted language
+ 
+ *CALLSTACKS VS MEMORY HEAPS*
+ *MEMORY HEAP: Place to store/write code. Place to allocate memory, use memory, release memory
+ *CALL STACK: Keep track of where we are in the code. FILO
+ -So... for every function execution, a new execution context is created, which gets popped into call stack, and is how
+ JS thread learns which environment to take instruction from and execute.
+ 
+ 3 COMMON THINGS THAT CAN CAUSE MEMORY LEAKS:
+ 1.) Global Variables
+ 2.) Event Listeners
+ 3.) Set intervals - like when you are referencing objects, it will be running and running cause it isn't collected by garbage collector
+ 
+ *MEMORY LIFESTYLE*
+ 1. Allocate memory you need
+ 2. Use the allocated memory(read, write)
+ 3. Release the allocated memory when it is not needed anymore
+ 
+ *WHAT IS THE PROBLEM WITH ASYNCHRONOUS CODE*
+ Not great at handling long running tasks! So if you have an alert button, you can't scroll or click til you click on button
+ 
 Lexical: related to the words or vocabulary of a language
 Where the words were written and their location 
 Think of it this way: each global execution context shows a new world of lexican environment
