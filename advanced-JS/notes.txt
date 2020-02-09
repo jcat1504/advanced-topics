@@ -1,5 +1,5 @@
 COMPILER VS INTERPRETER
-COMPILER: Transform code written in a high leevel programming language into machine code, at once, before program runs
+COMPILER: Transform code written in a high level programming language into machine code, at once, before program runs
 
 * Will run code faster because it will only loop once
 *Has optimization, even though it starts off slower
@@ -45,6 +45,14 @@ Think of it this way: each global execution context shows a new world of lexican
 for each function, it creates a lexical environment 
 In javascript, our lexical scope(available data + variables where the function was defined)
 determines our available variables. Not where the function is called, which is dynamic scope.
+
+*EXECUTION CONTEXT: An abstract oncept of an environment where JS code is evaluated and executed
+*Types: 
+    -Global Execution Context: Default execution context. Creates global obj(usually the window) + sets value of this===global obj
+    Can only be one global executional context in program
+    -Functional Execution Context: everytime a function is invoked, a brand new exectution contect is created for that function
+    -Eval function execution context: code executed by eval function. we don't use this really.
+    
 
 Hoisting:the behavior of moving the variables or function declarations
 to the top of their respective environments during compilation phase 
