@@ -73,3 +73,21 @@ var sing2 = function(){
 function sing() {
     console.log('ohhh la la la')
 }
+
+*FUNCTION SCOPE VS BLOCK SCOPE*
+*FUNCTION SCOPE: Variable is defined and visible only in function. cannot access outside of function
+*BLOCK SCOPE: usually within if, switch conditions or for/while loops or {} functions
+    -const or let will define block scope variables 
+    
+*this: the object that the function is a property of 
+    *this refers to whatever is left of the dot 
+    *this avoids DRY
+  WHY IS THIS SO IMPORTANT?*
+  1. gives methods access to their objects
+  2. executes same code for multiple objects
+  
+-In JS, our lexical scope(available data and variables where function was defined) determines our available variables. not where the 
+function was called/dynamic scopes
+-For this keyword, doesn't matter where variable is written, it matters where the function is called
+*arrow functions are lexically scoped
+    -it will not bound to window object if you place your var in an object itself!
