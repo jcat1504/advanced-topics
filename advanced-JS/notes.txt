@@ -91,3 +91,18 @@ function was called/dynamic scopes
 -For this keyword, doesn't matter where variable is written, it matters where the function is called
 *arrow functions are lexically scoped
     -it will not bound to window object if you place your var in an object itself!
+    
+*CALL, APPLY, BIND()*
+-call(): literally invokes function with ();
+    can also use call on a function from another object
+*call and apply go hand in hand. apply just takes elements in array. good for borrowing methods from objs
+*bind(): will return a new function with certain context and parameters. useful to call functions later on with certain context
+or certain 'this' keyword
+
+*BIND AND CURRYING*
+*currying: process in functional programming which we can transform a function with multiple arguments into a sequence of nesting
+functions. returns a new function that expects the next argument inline
+    -keep returning functions until arguments are done
+  COMES IN HANDY WHEN:
+   1.) you want to write little code modules that can be reused and configured with ease
+   2.) to avoid frequently calling a function with the same argument 
