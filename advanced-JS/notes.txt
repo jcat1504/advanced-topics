@@ -1,3 +1,43 @@
+COMPILER VS INTERPRETER
+COMPILER: Transform code written in a high level programming language into machine code, at once, before program runs
+
+* Will run code faster because it will only loop once
+*Has optimization, even though it starts off slower
+
+INTERPRETER; converts each high level program statement one by one, into machine code, during program running
+    -Babel: JS compiler that takes modern JS code and returns browser compatible JS(old JS code)
+    -TypeScript: Superset of JS that compiles down to JS
+    
+ *Easy to get up and running
+ *Can get slow with repeated code
+ 
+ *V8 engines have JIT compilers, which is best of both worlds
+ 
+ *IS JAVASCRIPT AN INTERPRETATED LANGUAGE?*
+ Well--depends on the implementation! Most of its performances and optimization factor depends on the engine it is supported by
+ -First of all, JS engines(or any other language engines) which translate our code for computers to understand are based on
+ interpreter or compilers
+ -Since we also have compliers in the engine to optimize code, it is not really an interpreted language
+ 
+ *CALLSTACKS VS MEMORY HEAPS*
+ *MEMORY HEAP: Place to store/write code. Place to allocate memory, use memory, release memory
+ *CALL STACK: Keep track of where we are in the code. FILO
+ -So... for every function execution, a new execution context is created, which gets popped into call stack, and is how
+ JS thread learns which environment to take instruction from and execute.
+ 
+ 3 COMMON THINGS THAT CAN CAUSE MEMORY LEAKS:
+ 1.) Global Variables
+ 2.) Event Listeners
+ 3.) Set intervals - like when you are referencing objects, it will be running and running cause it isn't collected by garbage collector
+ 
+ *MEMORY LIFESTYLE*
+ 1. Allocate memory you need
+ 2. Use the allocated memory(read, write)
+ 3. Release the allocated memory when it is not needed anymore
+ 
+ *WHAT IS THE PROBLEM WITH ASYNCHRONOUS CODE*
+ Not great at handling long running tasks! So if you have an alert button, you can't scroll or click til you click on button
+ 
 Lexical: related to the words or vocabulary of a language
 Where the words were written and their location 
 Think of it this way: each global execution context shows a new world of lexican environment
@@ -5,6 +45,14 @@ Think of it this way: each global execution context shows a new world of lexican
 for each function, it creates a lexical environment 
 In javascript, our lexical scope(available data + variables where the function was defined)
 determines our available variables. Not where the function is called, which is dynamic scope.
+
+*EXECUTION CONTEXT: An abstract oncept of an environment where JS code is evaluated and executed
+*Types: 
+    -Global Execution Context: Default execution context. Creates global obj(usually the window) + sets value of this===global obj
+    Can only be one global executional context in program
+    -Functional Execution Context: everytime a function is invoked, a brand new exectution contect is created for that function
+    -Eval function execution context: code executed by eval function. we don't use this really.
+    
 
 Hoisting:the behavior of moving the variables or function declarations
 to the top of their respective environments during compilation phase 
@@ -25,3 +73,36 @@ var sing2 = function(){
 function sing() {
     console.log('ohhh la la la')
 }
+
+*FUNCTION SCOPE VS BLOCK SCOPE*
+*FUNCTION SCOPE: Variable is defined and visible only in function. cannot access outside of function
+*BLOCK SCOPE: usually within if, switch conditions or for/while loops or {} functions
+    -const or let will define block scope variables 
+    
+*this: the object that the function is a property of 
+    *this refers to whatever is left of the dot 
+    *this avoids DRY
+  WHY IS THIS SO IMPORTANT?*
+  1. gives methods access to their objects
+  2. executes same code for multiple objects
+  
+-In JS, our lexical scope(available data and variables where function was defined) determines our available variables. not where the 
+function was called/dynamic scopes
+-For this keyword, doesn't matter where variable is written, it matters where the function is called
+*arrow functions are lexically scoped
+    -it will not bound to window object if you place your var in an object itself!
+    
+*CALL, APPLY, BIND()*
+-call(): literally invokes function with ();
+    can also use call on a function from another object
+*call and apply go hand in hand. apply just takes elements in array. good for borrowing methods from objs
+*bind(): will return a new function with certain context and parameters. useful to call functions later on with certain context
+or certain 'this' keyword
+
+*BIND AND CURRYING*
+*currying: process in functional programming which we can transform a function with multiple arguments into a sequence of nesting
+functions. returns a new function that expects the next argument inline
+    -keep returning functions until arguments are done
+  COMES IN HANDY WHEN:
+   1.) you want to write little code modules that can be reused and configured with ease
+   2.) to avoid frequently calling a function with the same argument 
