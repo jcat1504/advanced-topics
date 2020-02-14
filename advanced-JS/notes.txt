@@ -106,3 +106,11 @@ functions. returns a new function that expects the next argument inline
   COMES IN HANDY WHEN:
    1.) you want to write little code modules that can be reused and configured with ease
    2.) to avoid frequently calling a function with the same argument 
+   
+ EXAMPLE OF CURRYING
+    function multiply(a,b) {
+        return a*b }
+ let multiplyByTwo = multiply.bind(this, 2)
+ console.log(multiplyByTwo(4)) => 8
+ 
+
