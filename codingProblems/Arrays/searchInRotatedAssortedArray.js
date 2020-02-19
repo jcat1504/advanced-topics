@@ -19,12 +19,12 @@ var search = function(nums, target) {
     
   while (left <= right) {
     let mid = Math.floor((left + right) / 2);
-    
+    //calculating where middle point would be 
     if (nums[mid] === target) {
       return mid;
     }
     
-    // When dividing the roated array into two halves, one must be sorted.
+    // When dividing the rotated array into two halves, one must be sorted.
     
     // Check if the left side is sorted
     if (nums[left] <= nums[mid]) {
@@ -52,6 +52,6 @@ var search = function(nums, target) {
     
     
   }
-    
+    //if no target found...
   return -1;
 };
