@@ -31,3 +31,24 @@ var copyRandomList = function(head) {
     }
     return clones.get(head);
 }
+
+//solution 2
+var copyRandomList = function(head) {
+    if (head === null)return null;
+    let currentNode = head;
+    let map = new Map();
+
+    while(currentNode != null){
+        map.set(currentNode, 
+        new Node(currentNode.val, currentNode.next, currentNode.random))
+        currentNode = currentNode.next;
+    }
+
+    let newHead = map.get(head);
+
+    for (let newNode of map.values()) {
+        if(newNode.next != null) newNode.next = map.get(newNode.next);
+        if(newNode.random != null) newNode.random = map.get(newNode.random);
+    }
+    return newHead;
+}
