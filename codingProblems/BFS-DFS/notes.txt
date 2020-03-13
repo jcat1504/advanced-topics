@@ -1,0 +1,5 @@
+Linear search: method of finding target value within a list.
+beasts.indexOf('Godzilla');
+
+Binary Search: A divide and conquer algorithm. divides a large array into smaller ones, then recursively operates the sub arrays
+--like, find middle value to target value
