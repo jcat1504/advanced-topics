@@ -113,4 +113,33 @@ functions. returns a new function that expects the next argument inline
  let multiplyByTwo = multiply.bind(this, 2)
  console.log(multiplyByTwo(4)) => 8
  
+ *CONTEXT VS SCOPE*
+ Context- Object based
+ Scope - Function based
+ *Scope: pertains to the variable access of a function when it is invoked and is unique to each invocation 
+ *Context: Always the value of this keyword, which is reference to the object that "owns" the currently executing code 
+ *Null: absense of value * undefined absense of definition
+
+ *Primitive: Represents a single value 
+ *Array.isArray(): will check if element is actually an array 
+
+ *PASS BY VALUE VS PASS BY REFERENCE*
+ -In JS, all function arguments are always pass by value- which means that JS copies values of the variables that you 
+ pass to a function into local variables
+Any changes you make to the local variables inside the function does not affect the arguments that you passed in 
+
+ie. function square(x) {
+    x = x * x;
+}
+var y = 10;
+square(y) =>no effect. this is pass by value 
+
+*PASS BY REFERENCE*
+let obj1 = { name: 'Yao', password: '123'}
+let obj2 = obj1;
+obj2.password = 'easypeasy'; <-- which also applies to obj1
+
+*WAYS OF CLONING*
+*object.assign(): copies all enumerable own properties from one or more sourced objects to a target object 
+
 
