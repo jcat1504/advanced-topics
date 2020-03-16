@@ -23,6 +23,6 @@ var sortedListToBST = function(head) {
 
     function countNodes(node) {
         if (!node) return 0 
-        retuen 1 + countNodes(node.next)
+        return 1 + countNodes(node.next)
     }
 }
