@@ -141,5 +141,33 @@ obj2.password = 'easypeasy'; <-- which also applies to obj1
 
 *WAYS OF CLONING*
 *object.assign(): copies all enumerable own properties from one or more sourced objects to a target object 
+let obj - {a: 'a', b: 'b', c:'c'};
+let clone = object.assign({}, obj);
+                        target  source
+
+let clone2 = {...obj} <--spread operator will also make a duplicate 
+
+*DEEP COPY/CLONE VS SHALLOW CLONE*
+*DEEP CLONE: Recursively clones all nested objects 
+*SHALLOW CLONE: does not copy nested objects 
+
+*TYPE COERCION: the process of converting value from one type to another. 1==='1', int to string 
+*in conclusion always use ===
+
+*STATICALLY TYPED LANGUAGES VS DYNAMICALLY TYPED LANGUAGES*
+*STATIC: 
+-var is known at compile time 
+-a lot of trivial bugs caught before development 
+-type checking 
+
+*DYNAMIC: 
+-if type is associated with runtime, values can be typed quicker 
+-type checking at run time as opposed to compile time 
+
+*WEAKLY VS STRONGLY TYPED*
+-JS is weakly typed language as in: 
+var a = "booya!"
+a + 17="booya!17" <--can add other types to strings and so on and so forth 
+*Java will give out an error because adding two diff primitive values is a no no*
 
 
