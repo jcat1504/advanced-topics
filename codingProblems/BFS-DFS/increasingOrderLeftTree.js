@@ -17,7 +17,7 @@ var increasingBST = function(root) {
   
   let lastLeftNode = leftRoot;
   while (lastLeftNode.right) {
-    lastLeftNode = lastLeftNode.right;
+    lastLeftNode = lastLeftNode.right;//assigning left node to right 
   }
   
   lastLeftNode.right = root;
