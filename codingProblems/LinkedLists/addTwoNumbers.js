@@ -21,42 +21,31 @@
  */
 
 var addTwoNumbers = function(l1, l2) {
-    let head, c= head,  one = l1, two = l2, carry = 0;
-  
+    if (l1===null) return l2;
+    if (l2===null) return l1;
 
-    while(one || two) {
-        let x = 0, y = 0, sum = carry, next, tmpNode;
-        if(one.val){
-            x = one.val;
+    //new a ListNode here, with head.next as header, pos as a pointer points to current position
+    var head = new ListNode(0);
+    var pos = head;
+    var temp = 0;
+    while (l2!==null || l1!==null || temp>0){
+        
+        //(l2!==null || l1!==null || temp>0) indicates that next digit is not null, so new a Node and move to it
+        pos.next = new ListNode(0);
+        pos = pos.next;
+        
+        if (l1!==null){
+            temp += l1.val;
+            l1 = l1.next;
         }
-        if(two.val){
-            y = two.val;
+        if (l2!==null){
+            temp += l2.val;
+            l2 = l2.next;
         }
-        sum += x + y;
-        carry = Math.floor(sum / 10);
-        next = sum % 10;
-        tmpNode = new ListNode(next);
-        if(head == null){
-            head =  new ListNode(next);
-            c = head;
-        }else{
-            c.next = tmpNode;
-            c = c.next;
-        }
-      if(one.next != null){
-        one = one.next;
-      }else{
-        one = false
-      }
-      if(two.next != null){
-        two = two.next;
-      }else{
-        two = false
-      }
+        
+        pos.val = temp%10;
+        temp = parseInt(temp/10);
+        //console.log(temp);
     }
-    if(carry > 0){
-        let tmpNode= new ListNode(carry);
-        c.next = tmpNode;
-    }
-    return head;
+    return head.next;
 };
