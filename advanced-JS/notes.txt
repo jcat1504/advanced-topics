@@ -170,4 +170,11 @@ var a = "booya!"
 a + 17="booya!17" <--can add other types to strings and so on and so forth 
 *Java will give out an error because adding two diff primitive values is a no no*
 
+Advantages of OOP and Functional programming
+-clear and understandable
+-easy to extend and maintain
+-memory efficient
+-DRY 
+*IN OOP:Objects is like a box containing info and operations that are supposed to refer to the same concept 
+
 
