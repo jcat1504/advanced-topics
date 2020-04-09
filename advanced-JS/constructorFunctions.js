@@ -66,3 +66,36 @@ const dolby = new Elf('Dolby', 'cloth', 'house');
 dolby.attack();
 const shrek = new Ogre('Shrek', 'club', 'green');
 shrek.makeFort();
+
+console.log(Ogre.prototype.isPrototypeOf(shrek)); //true
+console.log(Character.prototype.isPrototypeOf(Ogre.prototype));
+
+//remember that we create an instance from a class using the word 'new'. we are essentially creating a version of the class
+//inheritance is using 'extends' is inheriting somethin from a higher class. it links up the prototype chain so youre not creating copies or inefficiency.
+//^^ so for example, we are not creating any copies but we are moving up the chain to the Character class when we are referring about Ogre. 
+//Ogre is 'inheriting' methods from Character
+
+class Character {
+  constructor(name, weapon) {
+    this.name = name;
+    this.weapon = weapon;
+  }
+  attack() {
+    return 'atack with ' + this.weapon
+  }
+}
+ 
+  class Queen extends Character {
+   constructor(name, weapon, type) {
+     super(name, weapon)
+     this.type = type;
+  }
+  attack(type) {
+    return `${super.attack()} 
+    I am the ${this.name} of ${this.type.has(type) ? type : 'hearts' }, now bow down to me! `       
+  }
+}
+ 
+const victoria = new Queen('Victoria', 'army', new Set().add('hearts').add('clubs').add('spades').add('diamonds')); 
+ 
+console.log(victoria.attack('clubs'));
