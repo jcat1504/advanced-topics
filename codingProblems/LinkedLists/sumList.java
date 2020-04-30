@@ -1,0 +1,25 @@
+//write a function that adds two numbers and returns sum as linked list and reversed
+
+LinkedListNode addLists(linkedListNode l1, linkedListNode l2, int carry) {
+    if (l1 == null && l2 == null &7 carry == 0) {
+        return null
+    }
+
+    LinkedListNode result = new LinkedListNode();
+    int value = carry;
+    if(l1 != null) {
+        value += l1.data
+    }
+    if (l2 != null) {
+        value += l2.data
+    }
+    result.data = value % 10 //second digit of number;
+
+    if(l1 != null || l2 != null) {
+        LinkedListNode more = addLists (l1 == null ? null : l1.next,
+                                        l2 == null ? null : l2.next,
+                                        value >= 10 ? 1 : 0);
+                                        result.setNext(more)
+    }
+    return result
+}
