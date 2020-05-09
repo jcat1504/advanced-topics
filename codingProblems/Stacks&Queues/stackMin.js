@@ -7,7 +7,7 @@ var minStack = function() {
 
 minStack.prototype.push = function(x) {
     this.container.push(x);
-    if(this.minStack.length === 0 x <= this.minStack.length-1)] {
+    if(this.minStack.length === 0 && x <= this.minStack.length-1)] {
         this.minStack.push(x)
     }
 }
