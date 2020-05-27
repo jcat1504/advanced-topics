@@ -26,3 +26,26 @@ var hasPathSum = function(root, sum) {
         return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);
     }
 };
+
+//other solution
+var hasPathSum = function (root, sum) {
+/* helper function which returns true if sum == root.val .else recurse.*/
+  function helper(root, sum) {
+    if (!root) {
+      return false;
+    }
+    if (!root.left && !root.right) {
+      if (sum === root.val) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    return (
+      helper(root.left, sum - root.val) || helper(root.right, sum - root.val)
+    );
+  }
+  return helper(root, sum);
+  
+};
