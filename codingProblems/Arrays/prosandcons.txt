@@ -1,0 +1,15 @@
+Pros
+-Store similar data of the same type.
+-Store data when you already know the number of all the elements
+-Implement other data structures like trees, linked lists, graphs, stacks, etc.
+-Store elements in different dimensions of arrays: two-dimensional or multidimensional.
+-An array allocates memory in contiguous memory locations for every element. This avoids memory overflow.
+-Iteration in arrays runs faster compared to other data structures.
+-An array, once declared, can be reused multiple times. This improves code readability.
+
+Cons
+=If you want to use an array, you have to know the number of elements you want to store beforehand. It is impossible to add new/extra values once you declare it.
+=The memory that is allocated to an array at declaration cannot be increased or decreased.
+=Allocating more memory than you need can waste memory space.
+=The cost of deleting and inserting elements is high because the elements of an array are stored in contiguous memory locations.
+=Errors show up at runtime instead of compile-time because an array does not verify the indexes when compiling.
