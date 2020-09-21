@@ -36,22 +36,21 @@ Promise.all(urls.map(url =>
 
 const getData = async function () {
     try {
-    const [ users, posts, albums ] = await Promise.all(urls.map(url =>
-    fetch(url).then(resp => resp.json())
-    ))
-    console.log('users', users)
-    console.log('posts', posts)
-    console.log('albums', albums)
-    } catch {
-        console.log('oops!')
+    const [ users, posts, albums ] = await Promise.all(urls.map(url =>{
+    const response = await fetch(url);
+    return response.json();
+}));
+console.log('users', users);
+console.log('posts', posts);
+console.log('albums', albums);
+    } catch (err) {
+        console.log('oooops', err)
     }
 }
 
 //await for all
 
 const loopThroughUrls = urls => {
-    for (url of urls) {
-        console.log(urls)
+    const arrayOfPromises = urls.map(url => fetch(url))
     }
-}
 //will loop through and iterate through each url and console log
