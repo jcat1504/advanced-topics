@@ -52,5 +52,9 @@ console.log('albums', albums);
 
 const loopThroughUrls = urls => {
     const arrayOfPromises = urls.map(url => fetch(url))
+    for await (let request of arrayOfPromises) {
+        const data = await request.json();
+        console.log(data);
+    }
     }
 //will loop through and iterate through each url and console log
