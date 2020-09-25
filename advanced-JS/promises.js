@@ -58,3 +58,13 @@ const loopThroughUrls = urls => {
     }
     }
 //will loop through and iterate through each url and console log
+
+//promise all and multiple async awaits --
+//first difference - fail fast
+//promise.all is rejected if any of the elements are rejected - really up to you if you want to use promise all or multiple awaits
+
+//second difference - error handling
+//when considering error handling, you MUST use promiseAll
+//for multiple awaits, you must use this method for better practice
+
+//never use multiple await for two or more independent async parallel tasks because you will not be able to handle the errors correctly
