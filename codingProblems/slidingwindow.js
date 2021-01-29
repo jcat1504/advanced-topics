@@ -33,7 +33,7 @@ var lengthOfLongestSubstring = function(s) {
         longest = Math.max(longest, rightWindow - leftWindow + 1);
         //one needs to check if current substrings length is greater than integer pointed at by longest
         //longest = substring length seen thus far
-        //after that, the window must expand to include another character and see i current substring can grow longer
+        //after that, the window must expand to include another character and see if current substring can grow longer
         //increment right window by 1
         rightWindow += 1;
   }
