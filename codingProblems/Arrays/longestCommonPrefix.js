@@ -28,3 +28,16 @@ var longestCommonPrefix = function(strs) {
 // -If all characters at index i match, then we add it to our prefix result string
 // -As soon as we hit one mismatch, that's the end of the common prefix and we break out of our loop
 // -return prefix at the end, which may be empty
+
+// The thing is with js we can sort strings and when we sort an array of different strings they will be sorted alphabetically,
+//  which means all we left to do is find the common part between the first and the last values in the sorted array. As simple 
+//  as this:
+
+
+var longestCommonPrefix = function(strs) {
+  strs.sort();
+  for (let i = 0; i < strs[0].length; i++) {
+    if (strs[0][i] !== strs[strs.length - 1][i]) return strs[0].substr(0, i);
+  }
+  return strs[0];
+};
