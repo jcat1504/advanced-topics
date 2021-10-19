@@ -27,3 +27,7 @@ var isValid = function(s) {
     else
         return true;
 };
+
+//o(n) - we are creating a for loop to scan for any inputs of parenthesis
+// we are adding characters to temp array, and deleting elements if they don't match, but it does
+//not throw off the position of array
