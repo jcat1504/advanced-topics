@@ -20,3 +20,16 @@ return digits;
 // First, I add 1 anyway. If there is a carry-over, the new digit will also add 1. If the current digit is less than 9 then return the array.
 
 // Last, when running over for loop, I just put fill 1 in front of the array.
+
+var plusOne = function(digits) {
+    for(let i = digits.length - 1; i>= 0; i--){
+        if(digits[i] < 9){
+            digits[i]++
+            return digits
+        }
+        
+        digits[i] = 0
+    }
+    digits.unshift(1)
+    return digits
+};
