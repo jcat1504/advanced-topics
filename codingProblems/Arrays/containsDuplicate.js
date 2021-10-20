@@ -17,7 +17,7 @@ var containsDuplicate = function(nums) {
 //When we loop over the initial array, we use the array element value as our count key and if it doesn’t exist, 
 // we give it a value to represent it is now defined. When we hit a count key that already exists, it is because the 
 // value is a duplicate and we can immediately return true.
-
+//o(n) this is because we are iterating thru array with a forloop and performing an operation of adding value to count
 var counts = {};
 your_array.forEach(function(x) { counts[x] = (counts[x] || 0)+1; });
 
