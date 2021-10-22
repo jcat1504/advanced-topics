@@ -17,6 +17,8 @@ var twoSum = function(nums, target) {
     if (nums[i]+nums[j] === target) return [i, j];
 };
 
+//o(n^2) cause nested for loop
+
 const numsArray = [1,3,7,9,2];
 const targetToFind = 11;
 
