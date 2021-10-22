@@ -16,3 +16,18 @@ var majorityElement = function(nums) {
     nums.sort((a,b) => a - b);
     return nums[Math.floor(nums.length/2)];
 }; 
+
+let majorityAmount = Math.floor(nums.length / 2);
+let map = {};
+
+for(let i = 0; i < nums.length; i++) {
+    if(map[nums[i]] !== undefined) {
+        map[nums[i]]++;
+    } else {
+        map[nums[i]] = 1;
+    }
+    if(map[nums[i]] > majorityAmount) {
+        return nums[i];
+    }
+}
+return -1;
