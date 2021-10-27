@@ -55,3 +55,28 @@ var search = function(nums, target) {
     //if no target found...
   return -1;
 };
+
+//solution 2
+var search = function(nums, target) {
+    let start = 0, end = nums.length - 1;
+    while(start<end){
+        let mid = Math.floor((start+end)/2);
+        if(nums[mid]===target) return mid;
+//         If the left part is sorted
+        if(nums[mid]>nums[start]){
+//             if target lies in the range of left part
+            if(target>=nums[start] && target<nums[mid]) end = mid-1;
+            else start = mid+1;
+        }
+//         if the right part is sorted
+        else if(nums[mid]<nums[end]){
+//             if the target lies in the range of right part
+            if(target>nums[mid] && target<=nums[end]) start = mid+1;
+            else end = mid-1;
+                
+        }
+//         otherwise break out of the loop
+        else break;
+    }
+    return nums[end]===target?end:-1;
+};
