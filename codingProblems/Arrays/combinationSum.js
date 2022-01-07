@@ -55,7 +55,8 @@ var combinationSum = function(candidates, target) {
                          
                 // "Lose" candidate[i]:
                 // In our main example, we don't hit this path until the path of pure 2's
-                // has been tried and found to lead to [2,2,2] with no candidates worth pursuing                 // further, because of the 2nd check of the while loop condition.
+                // has been tried and found to lead to [2,2,2] with no candidates worth pursuing                 
+                // further, because of the 2nd check of the while loop condition.
                 i++;
             }
             
