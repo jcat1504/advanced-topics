@@ -1,0 +1,29 @@
+- <main> is the good stuff - the main stuff. there should only be one 
+of main 
+
+- <section> begins a new "sectioning content" region, so it can have
+ its own <header> and/or <footer>.
+
+ PRIMARY STRUCTURES: Header, Footer, Section, Main 
+
+ CONTENT INDICATORS/SEMANTICS: 
+ - <article> element is used to represent a fully self contained 
+ region of content, something that could be plucked out of your page 
+ and dropped into another. like article or blog post or tweet 
+ - <nav> navigation blocks , group of links etc : 
+ <nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/archive">Archive</a>
+</nav>
+- SPAN tag is like div, which is used to group similar content so 
+it can be styled together. it is an INLINE element 
+
+- DIFF BETWEEN SECTION AND ARTICLE 
+-An article is intended to be independently distributable or reusable.
+-A section is a thematic grouping of content.
+
+
+<strong> and <em> tags represent that the span of text is of strong 
+importance or more importance and emphatic stress respectively than 
+the rest of the text. These tags have semantic meaning

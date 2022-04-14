@@ -1,0 +1,78 @@
+What are tags and attributes in HTML?
+    Tags are the primary component of the HTML that defines how the
+    content will be structured/ formatted, whereas Attributes are used 
+    along with the HTML tags to define the characteristics of the 
+    element. For example, <p align=” center”>Interview questions</p>, 
+    in this the ‘align’ is the attribute using which we will align the 
+    paragraph to show in the center of the view
+
+A Block-level element occupies the entire horizontal space of its 
+parent element (container), and vertical space equal to the height
+of its contents, thereby creating a "block". Browsers typically
+display the block-level element with a newline both before and 
+after the element.
+
+What is the difference between the ‘id’ attribute and the ‘class’ 
+attribute of HTML elements?
+    Multiple elements in HTML can have the same class value, whereas a 
+    value of id attribute of one element cannot be associated with
+    another HTML element
+
+Describe HTML layout structure.
+Every web page has different components to display the intended 
+content and a specific UI. But still, there are few things which 
+are templated and are globally accepted way to structure the web 
+page, such as:
+
+    <header>: Stores the starting information about the web page.
+    <footer>: Represents the last section of the page.
+    <nav>: The navigation menu of the HTML page.
+    <article>: It is a set of information.
+    <section>: It is used inside the article block to define the basic 
+    structure of a page.
+    <aside>: Sidebar content of the page
+
+
+In how many ways can we position an HTML element? 
+Or what are the permissible values of the position attribute?
+There are mainly 7 values of position attribute that can be used to 
+position an HTML element:
+    static: Default value. Here the element is positioned according to 
+    the normal flow of the document.
+    absolute: Here the element is positioned relative to its parent 
+    element. The final position is determined by the values of left, right, top, bottom.
+    fixed: This is similar to absolute except here the elements are 
+    positioned relative to the <html> element.
+    relative: Here the element is positioned according to the normal 
+    flow of the document and positioned relative to its original/ normal position.
+    initial: This resets the property to its default value.
+    inherit: Here the element inherits or takes the property of its 
+    parent
+
+In how many ways you can display HTML elements?
+    inline: Using this we can display any block-level element as an 
+    inline element. The height and width attribute values of the element
+    will not affect.
+    block: using this, we can display any inline element as a 
+    block-level element. 
+    inline-block: This property is similar to inline, except by using 
+    the display as inline-block, we can actually format the element using height and width values.
+    flex: It displays the container and element as a flexible structure. It follows flexbox property.
+    inline-flex: It displays the flex container as an inline element 
+    while its content follows the flexbox properties.
+    grid: It displays the HTML elements as a grid container.
+    none: Using this property we can hide the HTML element.
+
+What are forms and how to create forms in HTML?
+<form action="/submit_data.php">
+   <label>Enter your name: </label>
+   <input type="text" name="name" /> 
+   <label>Enter Mobile number </label>
+   <input type="number" name="mobile_no"/>
+   <input type="submit" value="Submit">
+</form>
+
+What are Semantic Elements?
+    Semantic elements are those which describe the particular meaning 
+    to the browser and the developer. Elements like <form>, <table>, 
+    <article>, <figure>, etc., are semantic elements

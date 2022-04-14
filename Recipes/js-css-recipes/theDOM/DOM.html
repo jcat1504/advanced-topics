@@ -1,0 +1,78 @@
+<html>
+<body>
+  <div>Users:</div>
+  <ul>
+    <li>John</li>
+    <li>Pete</li>
+  </ul>
+</body>
+</html>
+
+//how to access div DOM node
+document.body.firstElementChild
+// or
+document.body.children[0]
+// or (the first node is space, so we take 2nd)
+document.body.childNodes[1]
+
+//how to access ul DOM node
+document.body.lastElementChild
+// or
+document.body.children[1]
+
+//The second <li> (with Pete):
+// get <ul>, and then get its last element child
+document.body.lastElementChild.lastElementChild
+
+//ways to access DOM
+<p id="master">i love javascript</p>
+
+ <script>
+const masterEl = document.getElementById('master')
+console.log(masterEl) //<p id="master">i love javascript</p> 
+ </script>
+
+with class 
+<p class="master2">i love javascript</p>
+        <p class="master2">i love react</p>
+        <h1 class="master2">i want a job</h1>
+
+        <button id="btn">click me</button>
+ 
+ <script>
+ 
+ const btn = document.getElementById('btn')
+        
+        btn.addEventListener('click', function master(){
+            var master = document.getElementsByClassName("master2");
+            master[2].innerHTML = 'i need a job';
+        })
+
+</script>
+
+GET ELEMENTS BY TAG NAME
+<p>VsCode</p>
+ <p>Atom</p>
+ <p>Sublime text</p>
+        <button id="btn">click me</button>
+       
+
+ <script>
+
+const btn = document.getElementById('btn')
+        
+        btn.addEventListener('click', function master(){
+            let master = document.getElementsByTagName('p');
+            let masterEl = master[1].innerHTML = 'Code editors';
+            console.log(masterEl) //Code editors
+        })
+
+//<p>Atom</p> changes to <p>Code editors</p>
+</script>
+
+HOW TO SELEC DOM ELEMENTS WITH CSS SELECTORS 
+<div id=master>i am a frontend developer</div>
+
+<script>
+const master = document.querySelector("#master") 
+</script>
